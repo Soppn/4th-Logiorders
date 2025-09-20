@@ -1,6 +1,6 @@
 // --- CONFIG ---
-var SCRIPT_URL = 'PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL';  // from Apps Script deploy
-var SHARED_TOKEN = 'CHANGE_ME_LONG_RANDOM';              // must match Code.gs
+var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzxvVgP78CFJL-Ays_FZojgoCV1vRoSFjbfsxfuqlu5OSHfpGJK4OICmvYHWi2r_LWa/exec';  // from Apps Script deploy
+var SHARED_TOKEN = 'h6!K_#29@aaS';              // must match Code.gs
 
 // --- Helpers ---
 function $(sel){ return document.querySelector(sel); }

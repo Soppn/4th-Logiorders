@@ -1,6 +1,6 @@
 // --- CONFIG ---
-var SCRIPT_URL = 'PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL';
-var SHARED_TOKEN = 'CHANGE_ME_LONG_RANDOM';
+var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzxvVgP78CFJL-Ays_FZojgoCV1vRoSFjbfsxfuqlu5OSHfpGJK4OICmvYHWi2r_LWa/exec';
+var SHARED_TOKEN = 'h6!K_#29@aaS';
 var POLL_MS = 8000;
 
 // --- State ---
