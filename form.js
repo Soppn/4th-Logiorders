@@ -48,11 +48,13 @@ $('#orderForm').addEventListener('submit', function(e){
     origin: location.origin
   };
 
-  fetch(SCRIPT_URL, {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify(payload)
-  })
+fetch(SCRIPT_URL, {
+  method: 'POST',
+  // Either omit headers entirely OR send text/plain:
+  headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+  body: JSON.stringify(payload)
+})
+
   .then(function(res){ return res.json().then(function(data){ return {ok:res.ok, data:data, statusText:res.statusText}; }); })
   .then(function(r){
     if (r.ok && r.data.ok) {
