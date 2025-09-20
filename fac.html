@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAC Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <h1>FAC – Incoming Logistics Orders</h1>
+
+    <div class="bar">
+      <label>Status
+        <select id="status">
+          <option value="">All</option>
+          <option>NEW</option><option>ACK</option><option>IN-PROGRESS</option>
+          <option>DELIVERED</option><option>REJECTED</option>
+        </select>
+      </label>
+      <button id="reload" class="btn">Reload</button>
+      <span class="muted">Page polls automatically every 8s</span>
+    </div>
+
+    <table id="tbl">
+      <thead>
+        <tr>
+          <th>Time</th><th>Unit</th><th>Priority</th><th>Grid</th>
+          <th>Items</th><th>Notes</th><th>Status</th><th>ID</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </main>
+
+  <!-- toast + tiny beep -->
+  <div id="toast" class="toast">New logistics order received</div>
+  <audio id="ping" preload="auto">
+    <source src="data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAESsAACJWAAACABAAZGF0YSQAAAAA" type="audio/wav">
+  </audio>
+
+  <script src="fac.js"></script>
+</body>
+</html>
