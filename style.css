@@ -1,0 +1,176 @@
+/* ==== Milsim Dark Theme (shared for form + FAC) ==== */
+:root{
+  --bg:#0f1115;         /* app background */
+  --panel:#171923;      /* cards/panels */
+  --line:#24283b;       /* borders/dividers */
+  --text:#e6e9f2;       /* main text */
+  --muted:#9aa3b2;      /* secondary text */
+  --accent:#3a86ff;     /* primary/cta */
+  --accent-2:#60a5fa;   /* gradient end */
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Ubuntu,"Noto Sans",sans-serif;
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+}
+
+.wrap{
+  max-width:960px;
+  margin:0 auto;
+  padding:24px;
+}
+
+/* Headings & helper text */
+h1{margin:0 0 16px; font-weight:700; letter-spacing:.2px}
+h2,h3{margin:10px 0}
+.muted{color:var(--muted)}
+
+/* Panels, forms, inputs */
+.panel, form, table{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:14px;
+  box-shadow:0 6px 28px rgba(0,0,0,.28);
+}
+form{padding:18px}
+
+label{display:block; margin:10px 0 6px; color:var(--muted); font-size:.95rem}
+input,select,textarea{
+  width:100%;
+  background:#0b0d13;
+  color:var(--text);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:10px 12px;
+  outline:none;
+  transition:border-color .15s, box-shadow .15s;
+}
+input:focus,select:focus,textarea:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px rgba(58,134,255,.2);
+}
+textarea{min-height:96px; resize:vertical}
+
+/* Buttons */
+.btn{
+  cursor:pointer;
+  border:1px solid var(--line);
+  background:#283048;
+  color:var(--text);
+  padding:10px 14px;
+  border-radius:12px;
+  font-weight:600;
+  transition:transform .06s ease, filter .15s ease, background .15s;
+}
+.btn:hover{filter:brightness(1.06)}
+.btn:active{transform:translateY(1px)}
+.btn.primary{
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  border:0;
+  color:#fff;
+}
+.btn.ghost{
+  background:transparent;
+  border:1px solid var(--line);
+}
+
+/* Layout utilities */
+.bar{display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:10px}
+.right{margin-left:auto}
+
+/* Two-column form rows */
+.grid2{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+@media (max-width:720px){ .grid2{grid-template-columns:1fr} }
+
+/* Items (order form) */
+#items{margin:8px 0}
+.rowhead{display:flex; justify-content:space-between; align-items:center; margin:6px 0}
+.itemRow{
+  display:grid;
+  grid-template-columns:2fr 1fr auto;
+  gap:8px;
+  margin:6px 0;
+}
+.rmItem{
+  border:1px solid var(--line);
+  background:transparent;
+  color:var(--text);
+  border-radius:10px;
+  padding:10px 14px;
+  line-height:1;
+}
+.rmItem:hover{filter:brightness(1.1)}
+
+/* Tables (FAC) */
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:12px;
+}
+thead th{
+  color:var(--muted);
+  font-weight:700;
+  padding:10px 12px;
+  border-bottom:1px solid var(--line);
+  text-align:left;
+}
+tbody td{
+  padding:10px 12px;
+  border-bottom:1px solid var(--line);
+}
+table tr{transition: background-color .6s}
+@media (max-width:640px){
+  thead th, tbody td{padding:8px}
+}
+
+/* Toast + highlight for new rows (FAC) */
+.toast{
+  position:fixed;
+  right:16px; bottom:16px;
+  background:#1f2937;
+  color:#fff;
+  padding:10px 14px;
+  border-radius:12px;
+  display:none;
+  z-index:9999;
+  border:1px solid var(--line);
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+@keyframes flash { 0%{background:#153e2b} 100%{background:transparent} }
+
+/* Small badges / code style */
+.kbd{
+  display:inline-block;
+  min-width:2ch;
+  text-align:center;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  background:#0b0d13;
+  border:1px solid var(--line);
+  padding:2px 6px;
+  border-radius:8px;
+  color:#e6e9f2;
+}
+
+/* Links in this theme */
+a{color:var(--accent); text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* Subtle separators */
+.divider{height:1px; background:var(--line); margin:12px 0}
+
+/* Helper classes */
+.badge{
+  display:inline-block;
+  padding:2px 8px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.08);
+  font-weight:700; font-size:.85rem;
+}
+.badge.low{background:rgba(96,165,250,.12)}
+.badge.med{background:rgba(245,158,11,.12)}
+.badge.high{background:rgba(239,68,68,.12)}
